@@ -1,0 +1,39 @@
+
+<view>
+<map bindtap="bindtap" bindmarkertap='bindmarkertap'  id="map" show-location  scale="{{scale}}"  latitude="{{latitude}}"
+      longitude="{{longitude}}"  markers="{{markers}}" style="width: 100%; height:100vh">
+      <cover-view class='controls'>
+          
+          <cover-view class='controls_txt' bindtap='mapchange' data-id='1'>
+              <cover-image class="img" src="/image/公交.png" />
+              <cover-view class="controls_name {{num==1?'active':''}}">公交</cover-view>
+          </cover-view>
+
+          <cover-view class='controls_txt' bindtap='mapchange' data-id='0'>
+              <cover-image class="img" src="/image/地铁.png" />
+              <cover-view class="controls_name {{num==0?'active':''}}">地铁</cover-view>
+          </cover-view>
+  
+          <cover-view class='controls_txt' bindtap='mapchange' data-id='2'>
+               <cover-image class="img" src="/image/休闲.png" />
+              <cover-view class="controls_name {{num==2?'active':''}}">休闲</cover-view>
+          </cover-view>
+          <cover-view class='controls_txt' bindtap='mapchange' data-id='3'>
+              <cover-image class="img" src="/image/购物.png" />
+              <cover-view class="controls_name {{num==3?'active':''}}">购物</cover-view>
+          </cover-view>
+          <cover-view class='controls_txt' bindtap='mapchange' data-id='4'>
+             <cover-image class="img" src="/image/美食.png" />
+             <cover-view class="controls_name {{num==4?'active':''}}">美食</cover-view>
+          </cover-view>
+          <cover-view class='controls_txt' bindtap='mapchange' data-id='5'>
+               <cover-image class="img" src="/image/医院.png" />
+              <cover-view class="controls_name {{num==5?'active':''}}">医院</cover-view>
+          </cover-view>
+          <cover-view class='controls_txt' bindtap='mapchange' data-id='6'>
+              <cover-image class="img" src="/image/银行.png" />
+              <cover-view class="controls_name {{num==6?'active':''}}">银行</cover-view>
+          </cover-view>
+      </cover-view>
+</map>
+</view>

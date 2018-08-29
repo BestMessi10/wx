@@ -1,0 +1,245 @@
+<!--图片轮播-->
+<view class="recommend">
+  <view class="swiper-container">
+    <swiper autoplay="auto" interval="5000" duration="500"  bindchange="swiperChange" class="swiper">
+      <block wx:for="{{imgUrls}}" wx:key="unique">
+        <swiper-item  data-url="{{img_url}}{{item}}" bindtap="enlarge">
+          <image src="{{img_url}}{{item}}" class="img"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+        <view class='dot'>{{imgnew}} / {{imgtotal}}</view>
+    </view> 
+    <!-- <view class="dots_name">
+        <view class='dots_namehouse'><text class='dots_znamehouse'>租房</text></view>
+    </view>  -->
+  </view>
+</view>
+<!-- 房屋内容 -->
+<view class='content_house'>
+    <view class='house_name'>{{title}}</view>
+    <view class='house_type'>
+      <view class='typeone'>
+        <view class='houseprice'>房租(年付价)</view>
+        <view class='monthprice'>{{rentFee}}元/月</view>
+      </view>
+      <view class='typetwo'>
+        <view class='houseprice'> 户型</view>
+        <view class='monthprice'>{{room}}室{{offic}}厅{{toilet}}卫</view>
+      </view>
+      <view class='typethree'>
+        <view class='houseprice'> 面积</view>
+        <view class='monthprice'>{{area}}㎡</view>
+      </view>
+    </view>
+    <view class='content_smallimg'>
+      <view class='smalllo'>
+      <block  wx:for="{{describe_img}}" wx:key="describeimgid">
+          <text class='smalllogo'>{{item}}</text>
+      </block >
+      </view> 
+    </view>
+
+    <view class='content_housemessage'>
+        <view class='housemessage'>
+            <text class='housename'>发布:</text><text class='housecontent'>{{publishDate}}</text>
+        </view>
+        <view class='housemessage'>
+            <text class='housename'>入住:</text><text class='housecontent'>随时入住</text>
+        </view>
+        <view class='housemessage'>
+            <text class='housename'>租期:</text><text class='housecontent'>{{rentTime}}</text>
+        </view>
+        <view class='housemessage'>
+            <text class='housename'>看房:</text><text class='housecontent'>{{lookHouse}}</text>
+        </view>
+        <view class='housemessage'>
+            <text class='housename'>楼层:</text><text class='housecontent'>{{floor}}/{{totalFloor}}层</text>
+        </view>
+      <view class='housemessage'>
+            <text class='housename'>电梯:</text><text class='housecontent'>
+              <block  wx:if="{{elevator==1}}">有</block>
+              <block wx:elif="{{elevator==2}}">无</block>
+              <block wx:else>暂无数据</block>
+            </text>
+        </view>
+        <view class='housemessage'>
+            <text class='housename'>车位:</text><text class='housecontent'>
+              <block wx:if="{{parkingLot==1}}">自有车位</block>
+              <block wx:elif="{{parkingLot==2}}">租用车位</block>
+              <block wx:else>暂无数据</block>
+            </text>
+        </view>
+         <view class='housemessage'>
+            <text class='housename'>用水:</text><text class='housecontent'>
+              <block wx:if="{{useWater==1}}">民水</block>
+              <block wx:elif="{{useWater==2}}">商水</block>
+              <block wx:else>暂无数据</block>
+            </text>
+        </view>
+        <view class='housemessage'>
+            <text class='housename'>用电:</text><text class='housecontent'>
+              <block wx:if="{{useElectric==1}}">民电</block>
+              <block wx:elif="{{useElectric==2}}">商电</block>
+              <block wx:else>暂无数据</block>
+            </text>
+        </view>
+        <view class='housemessage'>
+            <text class='housename'>燃气:</text><text class='housecontent'>
+              <block wx:if="{{gas==1}}">有</block>
+              <block wx:elif="{{gas==2}}">无</block>
+              <block wx:else>暂无数据</block>
+            </text>
+        </view>
+          <view class='housemessage'>
+            <text class='housename'>采暖:</text><text class='housecontent'>
+               <block wx:if="{{useHeating==1}}">集中采暖 </block>
+              <block wx:elif="{{useHeating==2}}">商业采暖</block>
+              <block wx:else>自采暖</block>
+            </text>
+        </view>
+        <view class='content_village'>
+          <text class='housename'>小区:</text><text class='housecontent'>{{comName}}</text>
+        </view> 
+    </view>
+</view>
+<view class='division'>
+</view> 
+<!--房源简介-->
+<view class='house_source_introduction'>
+    <view class='introduction'>房源简介</view>
+    <view class='introduction_img'>
+        <view class='introduction_img_tb'>
+            <view class='introduction_img_tba'>
+              <block wx:if="{{isTv==1}}">
+                 <text class='iconfont icon-dianshi introduction_common_img'></text><view class='introduction_miaosu'>电视</view>
+              </block>
+              <block wx:else>
+                  <text class='iconfont icon-dianshi introduction_common_img act_img'></text><view class='introduction_miaosu act_imga'>电视</view>
+              </block>
+            </view>
+            <view class='introduction_img_tba'>
+              <block wx:if="{{isFridge==1}}">
+                 <text class='iconfont icon-bingxiang introduction_common_img'></text><view class='introduction_miaosu'>冰箱</view>
+              </block>
+              <block wx:else>
+                  <text class='iconfont icon-bingxiang introduction_common_img act_img'></text><view class='introduction_miaosu act_imga'>冰箱</view>
+              </block>
+            </view>
+            <view class='introduction_img_tba'>
+              <block wx:if="{{isWasher==1}}">
+                 <text class='iconfont icon-xiyiji introduction_common_img'></text><view class='introduction_miaosu'>洗衣机</view>
+              </block>
+              <block wx:else>
+                 <text class='iconfont icon-xiyiji introduction_common_img act_img'></text><view class='introduction_miaosu act_imga'>洗衣机</view>
+              </block>
+            </view>
+            <view class='introduction_img_tba'>  
+              <block wx:if="{{isAir==1}}">
+                <text class='iconfont icon-kongtiao introduction_common_img'></text><view class='introduction_miaosu'>空调</view>
+              </block>
+              <block wx:else>
+                 <text class='iconfont icon-kongtiao introduction_common_img act_img'></text><view class='introduction_miaosu act_imga'>空调</view>
+              </block>
+            </view>
+            <view class='introduction_img_tba'>
+              <block wx:if="{{isHotWater==1}}">
+                 <text class='iconfont icon-reshuiqi introduction_common_img'></text><view class='introduction_miaosu'>热水器</view>
+              </block>
+              <block wx:else>
+                  <text class='iconfont icon-reshuiqi introduction_common_img act_img'></text><view class='introduction_miaosu act_imga'>热水器</view>
+              </block>
+            </view>
+        </view>
+        <view class='introduction_img_tb'>
+            <view class='introduction_img_tba'>
+           
+              <block wx:if="{{isBed==1}}">
+                  <text class='iconfont icon-chuang- introduction_common_img'></text><view class='introduction_miaosu'>床</view>
+                </block>
+                <block wx:else>
+                <text class='iconfont icon-chuang- introduction_common_img act_img'></text><view class='introduction_miaosu act_imga'>床</view>
+                </block>
+            </view>
+            <view class='introduction_img_tba'>
+           
+             <block wx:if="{{useHeating==1}}">
+                   <text class='iconfont icon-jiajutubiao- introduction_common_img'></text><view class='introduction_miaosu'>暖气</view>
+                </block>
+              <block wx:elif="{{useHeating==2}}">
+                   <text class='iconfont icon-jiajutubiao- introduction_common_img'></text><view class='introduction_miaosu '>暖气</view>
+                </block>
+                <block wx:else>
+                    <text class='iconfont icon-jiajutubiao- introduction_common_img act_img'></text><view class='introduction_miaosu act_imga'>暖气</view>
+                </block>
+            </view>
+            <view class='introduction_img_tba'>
+          
+             <block wx:if="{{isWifi==1}}">
+                   <text class='iconfont icon-jiajutubiao-1 introduction_common_img'></text><view class='introduction_miaosu'>宽带</view>
+                </block>
+                <block wx:else>
+                      <text class='iconfont icon-jiajutubiao-1 introduction_common_img act_img'></text><view class='introduction_miaosu act_imga'>宽带</view>
+                </block>
+            </view>
+            <view class='introduction_img_tba'>
+             
+               <block wx:if="{{isWardrobe==1}}">
+                  <text class='iconfont icon-yigui introduction_common_img'></text><view class='introduction_miaosu'>衣柜</view>
+                </block>
+                <block wx:else>
+                      <text class='iconfont icon-yigui introduction_common_img act_img'></text><view class='introduction_miaosu act_imga'>衣柜</view>
+                </block>
+            </view>
+            <view class='introduction_img_tba'>
+          
+             <block wx:if="{{isNatGas==1}}">
+                  <text class='iconfont icon-huo introduction_common_img'></text><view class='introduction_miaosu'>天然气</view>
+                </block>
+                <block wx:else>
+                      <text class='iconfont icon-huo introduction_common_img act_img'></text><view class='introduction_miaosu act_imga'>天然气</view>
+                </block>
+            </view>
+        </view>
+    </view>
+</view> 
+<!--简介文字-->
+<view class='textintroduction'>
+<view  class="{{openmo==0?'textintroduction_txt':'activity'}}">
+     {{des}} 
+    </view>
+    <block wx:if='{{openmo==0}}'><text class='textintroduction_more' bindtap='openmore'>... <text style='color:#3070e5'>展开</text></text></block>
+</view>
+
+<view class='division'>
+</view> 
+<!--付款方式-->
+<view class='paytype'>
+    <view class='tpyem'>付款方式</view>
+    <view class='typemoney'>
+      <view class='typemoneya'><text class='typemoneyatxt'>{{rentPay}}</text><view class='typemoneyatxta'>押金{{deposit}},服务费0元</view></view>
+       <view class='typemoneyb'>{{rentFee}}(元/月)</view>
+    </view>
+    
+</view>
+<view class='division'>
+</view> 
+
+<!--地图范围-->
+ <view class='footmap'>
+    <view class='footmapb'>位置及周边</view>
+    <map  bindtap="mapbindtap" bindcallouttap='mapbindtap' id="map" scale="{{scale}}"  latitude="{{latitude}}"
+      longitude="{{longitude}}"  markers="{{markers}}" style="width: 100%; height:470rpx;">
+    </map>
+</view> 
+<!--底部-->
+<view class='foot_f'></view>
+<!--页面底部-->
+<view class='foot'>
+    <view class='foot_v'>
+          <view class='foot_v_img'>
+              <text class='iconfont icon-jingjiren foot_v_img_tb'></text><text class='foot_v_img_txt'>{{middleman}}</text></view>
+          <view class='foot_v_phone' bindtap='tel'><view class='foot_v_phone_btn'><text  class='iconfont icon-dianhua foot_v_dianhua'></text><text  class='foot_v_dianhua_txt'>电话咨询</text></view></view>
+    </view> 
+</view>
