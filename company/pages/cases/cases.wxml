@@ -1,0 +1,25 @@
+<import src="cases-template/cases-template.wxml" />
+<view class='container'>
+
+  <view>
+    <swiper duration="1000" interval="3000" autoplay="true" indicator-dots="true" circular="true">
+        <swiper-item class="swiper">
+            <image src="https://api.wboyuan.com/static/img/company2.png"></image>
+        </swiper-item>
+        <swiper-item class="swiper">
+            <image src="https://api.wboyuan.com/static/img/company3.png"></image>
+        </swiper-item>
+       
+    </swiper>
+  </view> 
+
+  
+  <block wx:for="{{caseItems}}"  wx:for-item="item">
+    <!-- <view catchtap='toDetail' data-caseid='{{item.caseId}}' data-case-tittle="{{item.caseTittle}}"> -->
+    <view style='background:#fff;'>
+      <template is="caseTemplate1" data="{{item}}" /> 
+    </view>
+  </block>
+  
+
+</view>

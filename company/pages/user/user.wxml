@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<!-- 轮播图  -->
+
+<swiper indicator-dots class='swiper' indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay interval="{{inter}}" duration="{{duration}}" >
+
+        <block wx:for="{{['https://api.wboyuan.com/static/img/company.png']}}">
+          <navigator url=''>
+            <swiper-item><image src='{{item}}'  class="slide-image"></image></swiper-item>
+          </navigator>
+        </block>
+</swiper>
+<!--文字广告 begin-->
+<view>
+  <navigator>
+    <image class='wxpng' src='https://api.wboyuan.com/static/img/company5.png'></image>
+  </navigator>
+</view>
+<view>
+  <navigator>
+    <image class='company4' src='https://api.wboyuan.com/static/img/company4.png'></image>
+  </navigator>
+</view>
+<view>
+  <navigator>
+    <image class='wxpng' src='https://api.wboyuan.com/static/img/company6.png'></image>
+  </navigator>
+</view>
+

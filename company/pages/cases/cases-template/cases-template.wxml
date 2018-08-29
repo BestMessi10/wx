@@ -1,0 +1,27 @@
+<template name="caseTemplate">
+    <view class='item'>
+        <view class='show-case'>
+            <image class='avatar' src='{{item.caseImg}}' ></image>
+        </view>
+        <view class="show_content">
+            <text>{{item.caseTittle}}</text>
+            <text class='nav' style='font-size: 11px;'>{{item.caseInfo}}</text>
+        </view> 
+      </view>
+</template>
+<template name="caseTemplate1">
+    <view class='app'>|  {{item.nav}}</view>
+    <view class='con'>
+        <block wx:for="{{item.all}}"  wx:for-item="each" >
+            <view class='show_box' catchtap='toDetailt1' data-caseid='{{each.caseId}}' data-case-tittle="{{each.caseTittle}}" 
+            data-navid="{{each.navid}}">
+                <view class="caseItem">
+                    <image class="caseBox" src='{{each.caseImg}}'></image>
+                    <text class='caseTitle'>{{each.caseTittle}}</text>
+                </view>
+            </view>
+        </block>
+        
+        
+    </view>    
+</template>

@@ -1,0 +1,52 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/shopCart/shopCart",
+    "pages/user/user",
+    "pages/cases/cases",
+    "pages/booking/booking",
+    "pages/cases/cases-detail/cases-detail",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2f7ff8",
+    "navigationBarTitleText": "万宝源科技",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+		"color": "#999",
+		"selectedColor": "#1f6dd6",
+		"position": "bottom",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首 页 展 示",
+				"iconPath": "images/main-bt-1.png",
+				"selectedIconPath": "images/main-bt-2.png",
+        "animation":"true"
+			},
+			{
+				"pagePath": "pages/cases/cases",
+				"text": "案 例 介 绍",
+				"iconPath": "images/case-bt-1.png",
+        "selectedIconPath": "images/case-bt-2.png",
+        "animation": "true"
+			},
+			{
+				"pagePath": "pages/user/user",
+				"text": "联 系 我 们",
+				"iconPath": "images/about-bt-1.png",
+        "selectedIconPath": "images/about-bt-2.png",
+        "animation": "true"
+			},
+      {
+        "pagePath": "pages/booking/booking",
+        "text": "立 即 预 定",
+        "iconPath": "images/book-bt-1.png",
+        "selectedIconPath": "images/book-bt-2.png",
+        "animation": "true"
+      }
+		]
+	}
+}

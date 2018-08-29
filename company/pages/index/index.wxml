@@ -1,0 +1,97 @@
+<!--index.wxml-->
+<!-- 轮播图  -->
+
+<swiper indicator-dots class='swiper' indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay interval="{{inter}}" duration="{{duration}}" >
+
+        <block wx:for="{{['https://api.wboyuan.com/static/img/home_banner3@2x.png', 'https://api.wboyuan.com/static/img/home_banner2@2x.png', 'https://api.wboyuan.com/static/img/home_banner1_@2x.png']}}">
+          <navigator url=''>
+            <swiper-item><image src='{{item}}'  class="slide-image"></image></swiper-item>
+          </navigator>
+        </block>
+</swiper>
+<!--文字广告 begin-->
+
+<view>
+
+  <view class="tehui">|  小程序开发</view>
+  
+</view>
+<!-- 导航区 -->
+<view class='nav'>
+    <view class='conlumn'>
+        <navigator url="/pages/goods/goods" hover-class='none'>
+            <image src='https://api.wboyuan.com/static/img/img_shop.png' class='nav-pic'>
+                <view class='icon-wrap'>
+                    <image src='https://api.wboyuan.com/static/img/icon_shop1.png'></image>
+                    <view>到店系统</view>
+                </view>
+            </image>
+        </navigator>
+        <navigator url="/pages/goods/goods" hover-class='none'>
+            <image src='https://api.wboyuan.com/static/img/img_o2o.png' class='nav-pic'>
+                <view class='icon-wrap'>
+                    <image src='https://api.wboyuan.com/static/img/img_o2o2.png'></image>
+                    <view>o2o电商</view>
+                </view>
+            </image>
+        </navigator>
+        <navigator url='/pages/groupList/groupList' hover-class='none'>
+            <image src='https://api.wboyuan.com/static/img/img_plt.png' class='nav-pic'>
+                <view class='icon-wrap'>
+                    <image src='https://api.wboyuan.com/static/img/img_plt2.png'></image>
+                    <view>多店平台</view>
+                </view>
+            </image>
+        </navigator>
+    </view>
+    <view class='conlumn'>
+        <navigator url='/pages/house/house' hover-class='none'>
+            <image src='https://api.wboyuan.com/static/img/img_eat.png' class='nav-pic'>
+                <view class='icon-wrap'>
+                    <image src='https://api.wboyuan.com/static/img/img_eat1.png'></image>
+                    <view>美食外卖</view>
+                </view>
+            </image>
+        </navigator>
+        <navigator url='/pages/teamBuy/teamBuy' hover-class='none'>
+            <image src='https://api.wboyuan.com/static/img/img_zhihui.png' class='nav-pic'>
+                <view class='icon-wrap'>
+                    <image src='https://api.wboyuan.com/static/img/img_zhihui1.png'></image>
+                    <view>智慧门店</view>
+                </view>
+            </image>
+        </navigator>
+        <navigator url='/pages/teamBuy/teamBuy' hover-class='none'>
+            <image src='https://api.wboyuan.com/static/img/img_yingxiao.png' class='nav-pic'>
+                <view class='icon-wrap'>
+                    <image src='https://api.wboyuan.com/static/img/img_yingxiao1.png'></image>
+                    <view>营销工具</view>
+                </view>
+            </image>
+        </navigator>
+    </view>
+    
+</view>
+
+<view class='fenge'></view>
+<!-- 内容区 -->
+ <view class='app'>| APP开发</view>
+<view class='index-cont'>
+   
+    <view class='cont-wrap'>
+        <navigator>
+          <image class='wxpng' src='https://api.wboyuan.com/static/img/img_app.png'></image>
+        </navigator>
+    </view>
+</view>
+
+<view class='fenge'></view>
+ <view class='web'>| WEB开发</view>
+<view class='index-cont'>
+    
+    <view class='cont-wrap'>
+        <navigator>
+          <image class='wxpng' src='https://api.wboyuan.com/static/img/img_web.png'></image>
+        </navigator>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+/* pages/shopCart/shopCart.wxss */
+
+.back2{
+  font-size: 28rpx;
+  color: #666666;
+  border: 2rpx solid #999999;
+  border-radius: 8rpx;
+  line-height: 44rpx;
+  margin-top: 8px;
+  padding:4px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

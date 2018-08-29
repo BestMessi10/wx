@@ -1,0 +1,25 @@
+<view class="container">
+  <view class='head'>
+    <view class='show-case'>
+      <image class='avatar' src='{{caseItem.caseImg}}'></image>
+    </view>
+    <view class="show_content">
+      <text>{{caseItem.caseTittle}}</text>
+      <text class='nav'>{{caseItem.caseInfoAll}}</text>
+    </view>
+  </view>
+  <view class="box" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend">
+      <view animation="{{animation1}}" bindtap="scrollLeft">
+        <image src="{{clubs[0]}}" class="img" style="width:{{caseItem.img_width_one}}rpx" mode='aspectFill' />
+      </view>
+      <view animation="{{animation2}}" bindtap="scrollLeft">
+        <image src="{{clubs[1]}}" class="img2" />
+      </view>
+      <view animation="{{animation3}}">
+        <image src="{{clubs[2]}}" class="img3" style="width:{{caseItem.img_width_three}}rpx" mode='aspectFill' />
+      </view>
+  </view>
+  <view>
+      <text class='info'>{{caseItem.casetext}}</text>
+  </view>
+</view>

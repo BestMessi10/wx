@@ -1,0 +1,86 @@
+<view >
+    <navigator>
+        <image class='banner' src='https://api.wboyuan.com/static/img/bookba.png'></image>
+    </navigator>
+</view>
+<view class='conbg' >
+  <view class="content">
+      <text class='tittle'>预定咨询</text>
+  </view>
+  <view class='bookForm' >
+        <!-- <text class=''>------Reservation consultation------</text> -->
+        <form bindsubmit='bookFormSubmit'>
+          <view class='col'>
+            <view class='one'>
+              <image class='icon' src='../../images/icon_name.png'></image>
+            </view>
+            <text class='tt'>姓<text style='opacity:0'>的话</text>名：</text>
+            <input id="name" placeholder="请输入姓名"  bindinput='bindName'/>
+          </view>
+          <view class='col'>
+            <view class='one'>
+              <image class='icon' src='../../images/icon_phone.png'></image>
+            </view>
+            <text class='tt'>联系电话：</text>
+            <input id="phone" placeholder="请输入联系电话" bindinput='bindPhone'/>
+          </view>
+          <view class='col'>
+            <view class='one'>
+              <image class='icon' src='../../images/icon_mc.png'></image>
+            </view>
+            <text class='tt'>公司名称：</text>
+            <input id="company" placeholder="请输入公司名称" bindinput='bindCompany' />
+          </view>
+          <view class='col'>
+            <view class='one'>
+              <image class='icon' src='../../images/icon_address.png'></image>
+            </view>
+            <text class='tt'>公司地址：</text>
+            <input id="address" placeholder="请输入公司地址" bindinput='bindAddress'/>
+          </view>
+          
+          
+          
+          
+          <text id="error" style='color:red;'>{{error}}</text>
+          <button  class="subBtn" formType="submit">立即预定</button>
+        </form>
+  </view>
+</view>
+<view class='box'>
+    <view class='x'>
+      <view class='xb'>
+        <image class='xx' src='../../images/icon_call.png' bindtap='onClickPhone'></image>
+      </view>
+      <text>拨打电话</text>
+    </view>
+    <view class='x'>
+      <view class='xb'>
+        <image class='xx' src='../../images/icon_map.png' bindtap='mapbtn'></image>
+      </view>
+      <text >查看地图</text>
+    </view>
+</view>
+
+
+<!-- <view class="company">
+  <text class='c1'>万宝源数据处理</text>
+  <view class='address'>
+    <text class='a1'>公司地址：</text>
+    <view class='a2'>
+      <text class='d1'>成都市高新区环球时代中心</text>
+      <image class='d2' src='https://api.wboyuan.com/static/images/icon-location.png' bindtap='mapbtn'></image>
+    </view>
+  </view>
+  <view class='address'>
+    <text class='a1'>联系方式</text> -->
+    <!-- <view class='a2'>
+      <text class='d1'>客服QQ：123456</text>
+      <image class='d2' src='/images/icon-qq.png' bindtap='onClickQQ'></image>
+    </view> -->
+    <!-- <view class='a2'>
+      <text class='d1'>业务热线：13548159866</text>
+      <image class='d2' src='https://api.wboyuan.com/static/images/icon-phone.png' bindtap='onClickPhone'></image>
+    </view>
+  </view>
+</view> -->
